@@ -21,8 +21,9 @@ class ApartmentMutation implements MutationInterface, AliasedInterface
 
     /**
      * @param array $argument
+     * @return array
      */
-    public function addApartment(array $argument)
+    public function addApartment(array $argument): array
     {
         $apartment = new Apartment();
         $apartment->setCity($argument['city']);
@@ -48,7 +49,7 @@ class ApartmentMutation implements MutationInterface, AliasedInterface
      *
      * @return array
      */
-    public static function getAliases()
+    public static function getAliases(): array
     {
         return [
             'AddApartment' => 'add_apartment'
